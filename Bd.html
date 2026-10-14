@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Dearest Koko Ahmed ♡</title>
+
+<style>
+:root {
+  --navy: #080b20;
+  --purple: #a78bfa;
+  --pink: #ffb7d5;
+  --white: #fff8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(ellipse at top, #29204d 0%, transparent 55%),
+    linear-gradient(160deg, #080b20, #15102e 60%, #080b20);
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 92%);
+  margin: auto;
+  padding: 34px 0 60px;
+}
+
+section {
+  margin: 20px 0;
+  padding: clamp(22px, 5vw, 42px);
+  border: 1px solid #bda9ff30;
+  border-radius: 24px;
+  background: #15132cdd;
+  box-shadow: 0 10px 40px #00000022;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.eyebrow {
+  color: var(--pink);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+h1 {
+  font-size: clamp(34px, 8vw, 58px);
+  font-weight: normal;
+  line-height: 1.15;
+  margin: 18px 0;
+  color: #ffe4f1;
+}
+
+h2 {
+  color: #e4d7ff;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: normal;
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.soft {
+  color: #d8d1ed;
+}
+
+.heart {
+  color: #ffb6d5;
+  font-size: 36px;
+  animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+button {
+  border: 1px solid #f4c5e9;
+  border-radius: 999px;
+  padding: 13px 20px;
+  color: #211633;
+  background: linear-gradient(135deg, #ffd5e8, #d6c3ff);
+  margin: 7px 4px;
+  transition: transform .2s, filter .2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+.secondary {
+  color: #f8edff;
+  background: #ffffff0a;
+  border-color: #bca8f6a0;
+}
+
+#letter {
+  text-align: left;
+  padding-top: 28px;
+  margin-top: 25px;
+  border-top: 1px solid #bda9ff40;
+}
+
+#letter p {
+  margin: 0 0 19px;
+}
+
+.letter-title,
+.signature {
+  text-align: center;
+}
+
+.signature {
+  color: var(--pink);
+  font-size: 23px;
+}
+
+.surprise-card {
+  border: 1px solid #c4afff40;
+  border-radius: 18px;
+  padding: 18px;
+  margin-top: 12px;
+  background: #ffffff08;
+  text-align: left;
+}
+
+.surprise-card p {
+  margin-bottom: 0;
+}
+
+#message {
+  min-height: 25px;
+  color: var(--pink);
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  color: #c6b8e5;
+  font-size: 13px;
+  padding: 18px;
+}
+
+@media (max-width: 480px) {
+  main {
+    width: 94%;
+    padding-top: 16px;
+  }
+
+  section {
+    border-radius: 19px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<main>
+
+  <!-- WELCOME PAGE -->
+
+  <section id="welcome">
+    <div class="eyebrow">A little world made just for you</div>
+
+    <div class="heart">♡</div>
+
+    <h1>Dearest<br>Koko Ahmed</h1>
+
+    <p class="soft">
+      Some people are too special for an ordinary birthday wish.
+      So, I made you a little surprise.
+    </p>
+
+    <p>Ready to open it? ✨</p>
+
+    <button onclick="openGift()">
+      Open your surprise ♡
+    </button>
+
+    <p class="soft" style="font-size:12px">
+      Made with love by Fathimah
+    </p>
+  </section>
+
+
+  <!-- BIRTHDAY GREETING AND SURPRISES -->
+
+  <div id="gift" class="hidden">
+
+    <section>
+      <div class="eyebrow">
+        A special day for a special person
+      </div>
+
+      <div class="heart">♡</div>
+
+      <h1>Happy Birthday!</h1>
+
+      <h2>Dearest Koko Ahmed ♡</h2>
+
+      <p class="soft">
+        Today is your special day, Dearest Koko Ahmed.
+        May Allah fill your year with happiness, peace,
+        and countless blessings. Ameen. ♡
+      </p>
+
+      <p class="soft">
+        Today is a little reminder that someone in this world
+        is wishing you beautiful things with all her heart.
+      </p>
+    </section>
+
+
+    <!-- THREE CLICKABLE SURPRISES -->
+
+    <section>
+      <div class="eyebrow">Little surprises</div>
+
+      <h2>Three little things for you ♡</h2>
+
+      <p class="soft">
+        Open each one whenever you're ready.
+      </p>
+
+      <button class="secondary"
+        onclick="showSurprise(1)">
+        A little reminder
+      </button>
+
+      <button class="secondary"
+        onclick="showSurprise(2)">
+        A few words for you
+      </button>
+
+      <button class="secondary"
+        onclick="showSurprise(3)">
+        A dua for you
+      </button>
+
+
+      <div id="surprise1" class="surprise-card hidden">
+        <strong>A little reminder ♡</strong>
+
+        <p>
+          Never forget that your life matters, your dreams matter,
+          and you deserve kindness even on the days that feel
+          difficult. Please take good care of yourself.
+        </p>
+      </div>
+
+
+      <div id="surprise2" class="surprise-card hidden">
+        <strong>A few words for you ♡</strong>
+
+        <p>
+          You are someone I appreciate deeply. I hope you keep
+          growing, smiling, learning, and becoming the person you
+          dream of being. I am genuinely wishing the best for you.
+        </p>
+      </div>
+
+
+      <div id="surprise3" class="surprise-card hidden">
+        <strong>A dua for you 🤍</strong>
+
+        <p>
+          May Allah protect you, guide you towards what is good,
+          grant you peace of heart, bless your health and future,
+          fulfil your sincere duas, and make your difficult days
+          easier. Ameen.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- HEARTFELT LETTER -->
+
+    <section>
+      <div class="eyebrow">Something from my heart</div>
+
+      <h2>A letter for you 💌</h2>
+
+      <p class="soft">
+        There are some things I wanted to say that a simple
+        birthday wish could never fully express.
+      </p>
+
+      <button onclick="toggleLetter()" id="letterButton">
+        Read my letter ♡
+      </button>
+
+
+      <article id="letter" class="hidden">
+
+        <h2 class="letter-title">
+          A LETTER FROM THE HEART
+        </h2>
+
+        <p><strong>Dearest Koko Ahmed,</strong></p>
+
+        <p>Happy Birthday! ♡</p>
+
+        <p>
+          I hope today brings a genuine smile to your face and
+          reminds you that you deserve happiness, kindness, and
+          all the good things life has to offer.
+        </p>
+
+        <p>
+          I wanted to make something a little different for your
+          birthday — a small world filled with wishes, surprises,
+          and words chosen especially for you. Something that
+          could make you smile and remind you how special you
+          are to me.
+        </p>
+
+        <p>
+          Honestly, I don't think words will ever be enough to
+          explain how much you mean to me. You are not just
+          someone special in my life; you are someone who has
+          found a place in my heart that nobody else could ever
+          replace. You have become one of the most important
+          people in my world, someone whose happiness matters
+          to me more than I can explain.
+        </p>
+
+        <p>
+          To me, you are the best man I could ever wish for.
+          Not because I believe you have to be perfect, but
+          because there is something about you that makes my
+          heart choose you, again and again. I appreciate you
+          for who you are, for the person you have shown me,
+          and for the feelings you have brought into my life.
+          If someone asked me what makes you so special, I
+          honestly wouldn't know where to begin, because there
+          are so many little things about you that my heart
+          has grown to love.
+        </p>
+
+        <p>
+          I love you more deeply than I sometimes know how to
+          express. I love you in ways that go beyond beautiful
+          words and sweet moments. I care about your happiness,
+          your peace, your dreams, and the future you hope to
+          build. I want to see you succeed, achieve the things
+          you've always wished for, and become the person you
+          dream of being. Even when I cannot do much, I will
+          always wish the best for you and pray for your
+          happiness.
+        </p>
+
+        <p>
+          You have become such an important part of my life
+          that even the smallest things can remind me of you.
+          Sometimes, I wish I could explain everything my heart
+          feels, but the words never seem enough. All I know is
+          that what I feel for you is sincere, and you mean far
+          more to me than you might ever realise.
+        </p>
+
+        <p>
+          If there is one thing I want you to know, it is that
+          you are precious to me. I don't love you because I
+          expect you to be flawless, and I don't need you to be
+          someone other than yourself. I simply cherish you for
+          who you are. You have a special place in my heart,
+          and no matter how difficult it may sometimes be to
+          express my feelings, that place will always mean
+          something beautiful to me.
+        </p>
+
+        <p>
+          May Allah bless you with good health, peace, happiness,
+          and success in everything you do. May He guide you
+          towards what is best for you, make your difficult days
+          easier, protect your heart from unnecessary pain, and
+          fill your future with countless blessings. May He
+          grant you the things that are truly good for you,
+          fulfil your sincere duas, and lead you towards a
+          future filled with goodness. Ameen.
+        </p>
+
+        <p>
+          I hope this new chapter brings you closer to your
+          dreams and gives you memories worth keeping. Never
+          forget to take care of yourself, to be proud of how
+          far you've come, and to appreciate the little moments
+          that make life beautiful. You deserve a life filled
+          with peace, genuine happiness, and people who
+          appreciate the person you are.
+        </p>
+
+        <p>
+          And if I could wish for one more thing, it would be
+          that you never have to question how much you matter.
+          You matter to me more than these paragraphs could
+          ever explain. Your happiness means something to me,
+          your sadness matters to me, and your dreams are things
+          I genuinely hope to see you achieve. I want life to
+          be kind to you, even on the days when everything
+          feels difficult.
+        </p>
+
+        <p>
+          Thank you for being someone so special in my world.
+          Thank you for being the person my heart holds so
+          dearly. I hope this little gift makes your birthday
+          a little brighter and gives you a reason to smile.
+          I may not be able to give you everything in the world,
+          but I wanted to give you something made with my own
+          time, effort, and heart — something that reminds you
+          that you are loved and cherished.
+        </p>
+
+        <p>
+          Happy Birthday once again, dearest Koko Ahmed. ♡
+        </p>
+
+        <p>
+          May this year bring you countless beautiful moments,
+          may Allah always protect and guide you, and may your
+          heart find the happiness it deserves. No matter how
+          many birthdays come and go, I hope you always
+          remember that you are someone incredibly special
+          to me.
+        </p>
+
+        <p>
+          <strong>
+            You are my favourite person, someone I cherish
+            deeply, and one of the most important people in my
+            life. The person I hope to never lose, the only
+            hand I wish to hold for the rest of my life.
+            I love you more than these words could ever fully
+            express. ♡
+          </strong>
+        </p>
+
+        <p class="signature">
+          With all my love,<br>
+          Fathimah ♡
+        </p>
+
+      </article>
+    </section>
+
+
+    <!-- FINAL BIRTHDAY WISH -->
+
+    <section>
+      <div class="eyebrow">One last wish</div>
+
+      <div class="heart">♡</div>
+
+      <h2>For your new chapter</h2>
+
+      <p class="soft">
+        May Allah guide your steps, calm your worries,
+        bless your efforts, and fill the days ahead with
+        goodness. May you always find reasons to smile
+        and strength for every challenge.
+      </p>
+
+      <button onclick="finalWish()">
+        One last little surprise ✨
+      </button>
+
+      <p id="message" aria-live="polite"></p>
+
+      <p class="signature">
+        With love, Fathimah ♡
+      </p>
+    </section>
+
+  </div>
+
+
+  <footer>
+    A little birthday universe, made especially for you. ♡
+  </footer>
+
+</main>
+
+
+<script>
+/* OPEN THE BIRTHDAY SURPRISE */
+
+function openGift() {
+  document.getElementById("welcome").classList.add("hidden");
+  document.getElementById("gift").classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+/* OPEN OR CLOSE THE THREE SURPRISES */
+
+function showSurprise(number) {
+  const card = document.getElementById("surprise" + number);
+  card.classList.toggle("hidden");
+}
+
+
+/* OPEN OR CLOSE THE HEARTFELT LETTER */
+
+function toggleLetter() {
+  const letter = document.getElementById("letter");
+  const button = document.getElementById("letterButton");
+
+  const opening = letter.classList.contains("hidden");
+
+  letter.classList.toggle("hidden");
+
+  button.textContent = opening
+    ? "Close my letter ♡"
+    : "Read my letter ♡";
+
+  if (opening) {
+    setTimeout(() => {
+      letter.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 80);
+  }
+}
+
+
+/* THE FINAL LITTLE SURPRISE */
+
+function finalWish() {
+  document.getElementById("message").textContent =
+    "May this new chapter of your life bring you endless happiness, beautiful memories, and countless reasons to smile. May Allah protect you wherever life takes you, guide every step you take, and grant you the things your heart quietly wishes for. Ameen.
+
+Happy Birthday again, Dearest Koko Ahmed. May your days always be filled with peace, warmth, and blessings.
+
+Love you so much.
+
+To the moon and back ♡";
+}
+
+
+/* CREATE THE GENTLE STARRY SKY */
+
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+let stars = [];
+
+function makeStars() {
+  const ratio = window.devicePixelRatio || 1;
+
+  canvas.width = window.innerWidth * ratio;
+  canvas.height = window.innerHeight * ratio;
+
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+  stars = Array.from({ length: 100 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.5 + 0.3,
+    a: Math.random() * 0.65 + 0.2
+  }));
+}
+
+function drawStars() {
+  ctx.clearRect(
+    0,
+    0,
+    window.innerWidth,
+    window.innerHeight
+  );
+
+  for (const star of stars) {
+    ctx.beginPath();
+
+    ctx.arc(
+      star.x,
+      star.y,
+      star.r,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle = `rgba(255, 230, 255, ${star.a})`;
+    ctx.fill();
+  }
+
+  requestAnimationFrame(drawStars);
+}
+
+window.addEventListener("resize", makeStars);
+
+makeStars();
+drawStars();
+</script>
+
+</body>
+</html>
